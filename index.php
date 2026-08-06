@@ -1,0 +1,85 @@
+<?php
+  // Configurações básicas do site (opcional para dynamic rendering via PHP)
+  $siteTitle = "Portfólio - Gustavo Felipe";
+  $userName = "Gustavo Felipe de Oliveira";
+  $currentYear = date("Y");
+?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><?php echo $siteTitle; ?></title>
+  <link rel="stylesheet" href="./Css/style.css" />
+</head>
+
+<!-- =====| Modo Base como "Pessoal" |===== -->
+<body id="mainBody" class="mode-pessoal"> 
+  <div class="main-layout">
+
+  <!-- ==========| Barra Lateral |========== -->
+    <aside class="sidebar">
+      <div class="profile-content">
+        <div class="avatar-group">
+          <div id="btnPessoal" class="circle-option active-option">
+            <img id="imgPessoal" src="Imagens/Fotos/Foto-Pessoal.png" class="circle-img active-img" />
+          </div>
+          <div id="btnArte" class="circle-option">
+            <img id="imgArte" src="Imagens/Fotos/Foto-Arte.png" class="circle-img" />
+          </div>
+        </div>
+
+      <!-- ================| Info |================ -->
+        <div id="painelInfo" class="info-panel">
+          <h2 class="user-name"><?php echo $userName; ?></h2>
+          <p id="userRole" class="user-role"></p>
+
+          <div id="socialLinksContainer" class="social-links"></div>
+        </div>
+      </div>
+      <footer class="sidebar-footer">
+        © <?php echo $currentYear; ?> <?php echo $userName; ?> — Todos os direitos reservados
+      </footer>
+    </aside>
+
+    <main class="content-area">
+      <div class="content-wrapper">
+
+      <!-- ===================| Sobre Mim |=================== -->
+        <section id="sobreBox" class="panel-box active-panel">
+          <div class="panel-header">
+            <h2>Sobre Mim</h2>
+            <img src="Icons/seta-direita.png.png" class="icon-arrow" />
+          </div>
+          <div class="panel-content">
+            <p id="sobreTexto"></p>
+          </div>
+        </section>
+
+      <!-- ===================| Artes |=================== -->
+        <section id="arteBox" class="panel-box hidden">
+          <div class="panel-header">
+            <h2>Minha Arte</h2>
+              <img src="Icons/seta-direita.png.png" class="icon-arrow" />
+          </div>
+          <div class="panel-content"> 
+            <div id="listaArte" class="art-grid"> </div>
+          </div>
+        </section>
+
+      <!-- ================| Projetos |================ -->
+        <section id="projetosBox" class="panel-box">
+          <div class="panel-header">
+            <h2>Projetos</h2>
+            <img src="Icons/seta-direita.png.png" class="icon-arrow" />
+          </div>
+          <div id="listaProjetos" class="panel-content grid-list">
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+  <script src="./JavaScript/script.js"></script>
+</body>
+</html>
